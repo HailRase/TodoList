@@ -1,6 +1,6 @@
 {
   "namepage": "https://hailrase.github.io/TodoList",
-  "name": "it-incubator-todolist-ts-01",
+  "name": "it-incubator-todolist-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
