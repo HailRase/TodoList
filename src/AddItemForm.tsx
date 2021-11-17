@@ -6,7 +6,7 @@ type AddItemFormPropsType = {
 
 export const AddItemForm = (props:AddItemFormPropsType) => {
     const errorMsgStyles = { backgroundColor: "red", color: "white", fontWeight: 900}
-    const  errorInputStyles = {border: "2px solid red", outline: "none"}
+    const  errorInputStyles = {border: "3px solid green", outline: "none"}
     const [newTaskTitle, setNewTaskTitle] = useState("")
     const [error, setError] = useState<boolean>(false)
     const onChangeTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
