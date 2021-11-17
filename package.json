@@ -1,6 +1,6 @@
 {
-  "namepage": "https://HailRase.github.io/TodoList",
-  "name": "it-incubator-todolist-ts",
+  "namepage": "https://hailrase.github.io/TodoList",
+  "name": "it-incubator-todolist-ts-01",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +12,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/uuid": "^8.3.1",
+    "gh-pages": "^3.2.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
