@@ -1,12 +1,13 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from "react";
+import {IconButton, TextField} from "@material-ui/core";
+import {AddBox} from "@material-ui/icons";
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
 }
 
-export const AddItemForm = (props:AddItemFormPropsType) => {
-    const errorMsgStyles = { backgroundColor: "red", color: "white", fontWeight: 900}
-    const  errorInputStyles = {border: "3px solid green", outline: "none"}
+export const AddItemForm = (props: AddItemFormPropsType) => {
+    const errorMsgStyles = {backgroundColor: "red", color: "white", fontWeight: 900}
     const [newTaskTitle, setNewTaskTitle] = useState("")
     const [error, setError] = useState<boolean>(false)
     const onChangeTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,15 +34,19 @@ export const AddItemForm = (props:AddItemFormPropsType) => {
 
     return (
         <div>
-            <input
-                style={error ? errorInputStyles : undefined}
+            <TextField
+                size={"small"}
+                variant={"outlined"}
                 value={newTaskTitle}
-                placeholder='Enter title...'
                 onChange={onChangeTitleHandler}
                 onKeyPress={onKeyPressHandler}
+                label={"Title"}
+                error={error}
+                helperText={error && "Title is required!!!"}
             />
-            <button onClick={addItem}>+</button>
-            {errorMessage}
+            <IconButton onClick={addItem} color={"primary"} size={"small"}>
+                <AddBox fontSize={"large"}/>
+            </IconButton>
         </div>
     )
 }
