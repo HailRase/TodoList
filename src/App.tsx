@@ -11,7 +11,7 @@ type TaskType = {
     title: string
     isDone: boolean
 }
-type TodoListType = {
+export type TodoListType = {
     id: string
     title: string
     filter: FilterValuesType
@@ -62,7 +62,6 @@ function App() {
     function removeTask(taskID: string, todoListID: string) {
         setTasks({...tasks, [todoListID]: tasks[todoListID].filter(t => t.id !== taskID)})                                // проверить работу через консоль после урока
     }
-
     const changeTaskTitle = (taskID: string, title: string, todoListID: string) => {
         setTasks({
             ...tasks,
@@ -95,7 +94,6 @@ function App() {
     const changeTodoListTitle = (title: string, todoListID: string) => {
         setTodoLists(todoLists.map(tl => tl.id === todoListID ? {...tl, title: title} : tl))
     }
-
     function changeFilter(filter: FilterValuesType, todoListID: string) {
         setTodoLists(todoLists.map(tl => tl.id === todoListID ? {...tl, filter} : tl))
     }
