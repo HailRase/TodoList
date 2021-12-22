@@ -87,7 +87,7 @@ export function TodoList1(props: PropsType) {
         <div className="todolist">
             <Typography variant={"h6"} style={{fontWeight: "bold"}}>
                 <EditableSpan title={todoLists.title} setNewTitle={onChangeTodoListTitle}/>
-                <IconButton onClick={() => RemoveTodoListAC(props.todoListId)}>
+                <IconButton onClick={() => dispatch(RemoveTodoListAC(props.todoListId))}>
                     <Delete/>
                 </IconButton>
             </Typography>
