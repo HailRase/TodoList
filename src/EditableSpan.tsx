@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from "react";
+import React, {ChangeEvent, useCallback, useState} from "react";
 import {IconButton, TextField} from "@material-ui/core";
 import {Edit} from "@material-ui/icons";
 
@@ -7,7 +7,7 @@ type EditableSpanPropsType = {
     setNewTitle: (title: string) => void
 }
 
-export const EditableSpan = (props: EditableSpanPropsType) => {
+export const EditableSpan = React.memo((props: EditableSpanPropsType) => {
     const [editMode, setEditMode] = useState<boolean>(false)
     const [newTaskTitle, setNewTaskTitle] = useState<string>(props.title)
     const onEditMode = () => setEditMode(true)
@@ -15,9 +15,9 @@ export const EditableSpan = (props: EditableSpanPropsType) => {
         setEditMode(false)
         props.setNewTitle(newTaskTitle)
     }
-    const onChangeTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeTitleHandler = ((e: ChangeEvent<HTMLInputElement>) => {
         setNewTaskTitle(e.currentTarget.value)
-    }
+    })
     return (
         editMode
             ? <TextField
@@ -33,4 +33,4 @@ export const EditableSpan = (props: EditableSpanPropsType) => {
                 </IconButton>
             </span>
     )
-}
+})

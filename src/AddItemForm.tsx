@@ -6,8 +6,8 @@ type AddItemFormPropsType = {
     addItem: (title: string) => void
 }
 
-export const AddItemForm = (props: AddItemFormPropsType) => {
-    const errorMsgStyles = {backgroundColor: "red", color: "white", fontWeight: 900}
+export const AddItemForm = React.memo((props: AddItemFormPropsType) => {
+    //console.log('AddItemForm was rendered')
     const [newTaskTitle, setNewTaskTitle] = useState("")
     const [error, setError] = useState<boolean>(false)
     const onChangeTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +29,6 @@ export const AddItemForm = (props: AddItemFormPropsType) => {
             addItem()
         }
     }
-    const errorMessage = error && <div style={errorMsgStyles}>Title is required!</div>
 
 
     return (
@@ -49,4 +48,4 @@ export const AddItemForm = (props: AddItemFormPropsType) => {
             </IconButton>
         </div>
     )
-}
+})
