@@ -12,17 +12,17 @@ export type ActionType =
     | ReturnType<typeof AddTodoListAC>
     | ReturnType<typeof RemoveTodoListAC>
 
-const initialState: TasksStateType = {[todoListId_1]: [
-        {id: v1(), title: "HTML", isDone: false},
-        {id: v1(), title: "Css", isDone: true},
-        {id: v1(), title: "React", isDone: false},
-        {id: v1(), title: "Graph QL", isDone: true}
+const initialState: TasksStateType = {['todoListId_1']: [
+        {id:'1', title: "HTML", isDone: false},
+        {id: '2', title: "Css", isDone: true},
+        {id:  '3', title: "React", isDone: false},
+        {id: '4', title: "Graph QL", isDone: true}
     ],
-    [todoListId_2]: [
-        {id: v1(), title: "Meat", isDone: false},
-        {id: v1(), title: "Beer", isDone: true},
-        {id: v1(), title: "Milk", isDone: false},
-        {id: v1(), title: "Bread", isDone: true}
+    ['todoListId_2']: [
+        {id:  '5', title: "Meat", isDone: false},
+        {id:  '6', title: "Beer", isDone: true},
+        {id: '7', title: "Milk", isDone: false},
+        {id:  '8', title: "Bread", isDone: true}
     ]}
 
 export const tasksReducer = (state = initialState, action: ActionType): TasksStateType => {
